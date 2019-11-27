@@ -2,7 +2,7 @@ shopping_list = dict()
 
 def main():
     while(True):
-        whatToDo = input("help/instruction: ")
+        whatToDo = (input("help/instruction: ")).lower()
         if whatToDo=="help":
             print_help()
         elif whatToDo=="ca":
@@ -22,7 +22,7 @@ def print_help():
 
 def add_category():
     category = input("please type the name of the category: ")
-    shopping_list[category] = 0
+    shopping_list[category.lower()] = 0
     print(shopping_list)
 
 def print_shopping_list():
@@ -31,8 +31,6 @@ def print_shopping_list():
 def add_item():
     category = input("enter category: ")
     number_items = input("number of items: ")
-    shopping_list[category] = number_items
-
-
+    shopping_list[category.lower()] = number_items
 
 main()
